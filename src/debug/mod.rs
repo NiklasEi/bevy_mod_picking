@@ -138,7 +138,7 @@ pub fn update_debug_data(
     )>,
     #[cfg(feature = "selection")] selection: Query<Option<&selection::PointerMultiselect>>,
 ) {
-    for (entity, id, location, press, interactions, mut debug) in pointers.iter_mut() {
+    for (_entity, id, location, press, interactions, mut debug) in pointers.iter_mut() {
         let interactions = interactions
             .iter()
             .map(|(entity, interaction)| {
@@ -171,7 +171,7 @@ pub fn update_debug_data(
             drag_start: drag_start(*id),
             interactions,
             #[cfg(feature = "selection")]
-            multiselect: selection.get(entity).ok().flatten().map(|f| f.is_pressed),
+            multiselect: selection.get(_entity).ok().flatten().map(|f| f.is_pressed),
         };
     }
 }
