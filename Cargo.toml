@@ -98,7 +98,3 @@ required-features = ["backend_egui"]
 name = "virtual_pointer"
 path = "examples/virtual_pointer.rs"
 required-features = ["backend_egui"]
-
-[patch.crates-io]
-bevy = { git = 'https://github.com/bevyengine/bevy.git', branch = 'main' }
-bevy_mod_raycast = { git = 'https://github.com/Vrixyz/bevy_mod_raycast', branch = 'bevy-0.11-compatibility' }
